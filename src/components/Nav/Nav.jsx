@@ -7,6 +7,7 @@ import OnHoverComponent from './OnHoverComponent.jsx';
 import SubNav from './SubNav.jsx';
 import { Link } from 'react-router-dom';
 import { useMatch } from 'react-router-dom';
+import { navCategoriesData } from '../../utils/data/home/navCategoriesData.js'
 
 const Nav = () => {
     const isHomeRoute = useMatch("/");
@@ -28,8 +29,10 @@ const Nav = () => {
                 </Link>
 
                 {/* Categories */}
-                <div className='hidden lg:block'>
-                    <OnHoverComponent title={'Categories'} />
+                <div className='hidden lg:block hover:duration-200 cursor-pointer'>
+                    <OnHoverComponent title='Categories' data={{
+                        type: 'Categories', data: navCategoriesData
+                    }} />
                 </div>
 
                 {/* Search */}
@@ -39,7 +42,7 @@ const Nav = () => {
 
                 <div className="flex items-center gap-8 ">
                     {/* Categories */}
-                    <div className='hidden lg:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden lg:block   cursor-pointer'>
                         <OnHoverComponent title='Skillsprint Business' data={{
                             type: 'Skillsprint Business', data: {
                                 description: 'Get your team access to over 25,000 top Udemy courses, anytime, anywhere.',
@@ -49,7 +52,7 @@ const Nav = () => {
                     </div>
 
                     {/* Teach on Skillsprint */}
-                    <div className='hidden lg:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden lg:block   cursor-pointer'>
                         <OnHoverComponent title='Teach on Skillsprint' data={{
                             type: 'Teach on Skillsprint', data: {
                                 description: 'Turn what you know into an opportunity and reach millions around the world.',
@@ -59,7 +62,7 @@ const Nav = () => {
                     </div>
 
                     {/* My learning */}
-                    <div className='hidden lg:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden lg:block   cursor-pointer'>
                         <OnHoverComponent title='My learning' data={{
                             type: 'My learning', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -75,7 +78,7 @@ const Nav = () => {
 
                 <div className='flex items-center flex-1 gap-8 justify-end'>
                     {/* Wishlist */}
-                    <div className='hidden sm:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden sm:block   cursor-pointer'>
                         <OnHoverComponent title={<FaRegHeart className='' size={30} />} data={{
                             type: 'Wishlist', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -89,7 +92,7 @@ const Nav = () => {
                     </div>
 
                     {/* Cart */}
-                    <div className='hidden sm:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden sm:block   cursor-pointer'>
                         <OnHoverComponent title={<FiShoppingCart className='' size={30} />} data={{
                             type: 'Cart', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -103,7 +106,7 @@ const Nav = () => {
                     </div>
 
                     {/* Notification */}
-                    <div className='hidden sm:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
+                    <div className='hidden sm:block   cursor-pointer'>
                         <OnHoverComponent title={<GoBell className='' size={30} />} data={{
                             type: 'Notifications', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,

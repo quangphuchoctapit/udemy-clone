@@ -6,7 +6,7 @@ const SubNav = () => {
     return (
         <>
 
-            <div className='lg:flex gap-10 items-center p-3 border-b-2 border-gray-300 lg:text-xl text-md hidden'>
+            <div className='xl:flex gap-10 items-center p-3 border-b-2 border-gray-300 lg:text-xl text-md hidden'>
                 {subNavData?.map((item, index) => (
                     <div key={index} className='hidden lg:block hover:duration-200 hover:text-violet-500 cursor-pointer'>
                         <OnHoverComponent title={item.title} data={{

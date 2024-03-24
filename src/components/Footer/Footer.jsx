@@ -8,11 +8,11 @@ const Footer = () => {
                     <h4 className='text-2xl font-bold max-md:text-xl'>Teach the world online</h4>
                     <p className='max-md:text-sm'>Create an online video course, reach students across the globe, and earn money</p>
                 </div>
-                <button className='p-3 max-md:p-2 max-md:text-sm border-2 border-white font-bold'>Teach on Skillsprint</button>
+                <button className='p-3 max-md:p-2 max-md:text-sm border-2 border-white font-bold hover:bg-gray-700'>Teach on Skillsprint</button>
             </div>
             <div className="px-6 py-3 border-b-2 border-gray-600 flex max-sm:flex-col max-sm:gap-3 items-center">
-                <div className="flex flex-col gap-4 flex-1 max-md:text-sm">
-                    Top companies choose Udemy Business to build in-demand career skills.
+                <div className="flex 2xl:flex-row flex-col gap-4 flex-1 max-md:text-sm nax-2xl:leading-4 leading-4">
+                    Top companies choose <span className='text-violet-500 font-bold'>Skillsprint Business</span> to build in-demand career skills.
                 </div>
                 <div className='max-md:grid max-sm:grid-cols-2 p-3 flex-1 grid grid-cols-4 gap-3  font-bold'>
                     <div className='w-32 h-32 max-lg:w-20 max-lg:h-20'>
@@ -31,27 +31,27 @@ const Footer = () => {
             </div>
             <div className="px-6 py-3 border-gray-600 grid grid-cols-5 max-lg:grid-cols-3 max-md:text-sm gap-3">
                 <div className="flex flex-col gap-2 text-sm max-md:text-xs leading-4">
-                    <p>Skillsprint Business</p>
-                    <p>Teach on Skillsprint</p>
-                    <p>Get the app</p>
-                    <p>About us</p>
-                    <p>Contact us</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Skillsprint Business</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Teach on Skillsprint</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Get the app</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>About us</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Contact us</p>
                 </div>
                 <div className="flex flex-col gap-2 text-sm max-md:text-xs leading-4">
-                    <p>Careers</p>
-                    <p>Blog</p>
-                    <p>Help and Support</p>
-                    <p>Affiliate</p>
-                    <p>Investors</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Careers</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Blog</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Help and Support</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Affiliate</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Investors</p>
                 </div>
                 <div className="flex flex-col gap-2 text-sm max-md:text-xs leading-4">
-                    <p>Terms</p>
-                    <p>Privacy Policy</p>
-                    <p>Cookie Settings</p>
-                    <p>Sitemap</p>
-                    <p>Accessibility statement</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Terms</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Privacy Policy</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Cookie Settings</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Sitemap</p>
+                    <p className='hover:duration-200 hover:text-violet-300 cursor-pointer'>Accessibility statement</p>
                 </div>
-                <div className="max-lg:col-span-3 col-span-2 flex w-full max-lg:justify-end items-start">
+                <div className="max-lg:col-span-3 col-span-2 flex w-full max-lg:justify-start justify-end items-start">
                     <button className='border-white border-2 p-3'>English</button>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const Footer = () => {
                 <div className='w-48 h-32 ml-20 max-md:ml-3 max-md:w-28 max-md:h-16 hover:duration-200 hover:text-violet-500 cursor-pointer '>
                     <div style={{ backgroundImage: `url('././public/image/logo/logo.png')`, backgroundSize: '100%' }} className='image'></div>
                 </div>
-                <div className="mr-20 max-md:mr-3 max-md:text-xs">2024, Skillsprint, Tommy Le</div>
+                <div className="mr-20 max-md:mr-3 max-md:text-xs">	&copy;2024, Skillsprint, Tommy Le</div>
             </div>
         </div>
     )

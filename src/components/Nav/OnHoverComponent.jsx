@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { subNavData } from '../../utils/data/home/subNavData';
+import { MdArrowForwardIos } from "react-icons/md";
 
 const leftSideDataHoverItem = [
     ...subNavData.map(item => item.title), 'Categories'
@@ -20,6 +21,56 @@ const OnHoverComponent = ({ title, data }) => {
     }, [data]);
     const handleData = () => {
         switch (data?.type) {
+            case 'Categories':
+                const [isHovered, setIsHovered] = useState(false);
+                const [currentHoveredCategory, setCurrentHoveredCategory] = useState(null);
+
+                const handleMouseEnter = (item) => {
+                    setIsHovered(true);
+                    setCurrentHoveredCategory(item);
+                };
+
+                const handleMouseLeave = () => {
+                    setIsHovered(false);
+                };
+                return (
+                    <div className='group relative flex flex-row'>
+                        {/* First div */}
+                        <div className='bg-white group-hover:relative w-full border-2 shadow-2xl p-3 font-bold text-2xl flex flex-col gap-3 items-center'>
+                            <div className="min-h-screen w-full py-4 px-3 flex flex-col gap-6">
+                                {data?.data?.map(item => (
+                                    <Link to={item.link}
+                                        onMouseEnter={() => handleMouseEnter(item)}
+                                        // onMouseLeave={handleMouseLeave}
+                                        className={`w-full flex hover:duration-200 hover:text-violet-500 hover:relative justify-between items-center `}
+                                        key={item.id}
+                                    >
+                                        {item.title}
+                                        <MdArrowForwardIos size={15} />
+                                    </Link>
+                                ))}
+                            </div>
+                        </div>
+                        {/* Second div */}
+                        <div className={`min-h-screen group-hover:sticky right-0 -mr-[27rem] min-w-[26rem]`}>
+                            <div className='bg-white group-hover:relative w-full border-2 shadow-2xl p-3 font-bold text-2xl flex flex-col gap-3 items-center'>
+                                <div className="min-h-screen w-full py-4 px-3 flex flex-col gap-6">
+                                    {currentHoveredCategory?.commonTopics?.map(topic => (
+                                        <Link to={topic.link}
+                                            // onMouseEnter={() => handleMouseEnter(topic)}
+                                            // onMouseLeave={handleMouseLeave}
+                                            className='w-full flex hover:duration-200 hover:text-violet-500 hover:relative justify-between items-center'
+                                            key={topic.id}
+                                        >
+                                            {topic.title}
+                                            <MdArrowForwardIos size={15} />
+                                        </Link>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                );
             case 'Skillsprint Business':
                 return (
                     <div className='bg-white w-full border-2 shadow-2xl p-3 font-bold text-2xl flex flex-col gap-3 items-center'>
@@ -95,127 +146,21 @@ const OnHoverComponent = ({ title, data }) => {
                     </div>
                 );
             case 'Development':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative left-[-32px] transform mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Business':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-172px] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Finance & Accounting':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-288px] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'IT & Software':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-33rem] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Office Productivity':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-43rem] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Personal Development':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-56rem] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Design':
-                return (
-                    <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
-                        <div className="w-screen">
-                            <div className="relative  left-[-1140px] transform  mt-5 bg-black px-8 py-3">
-                                <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
-                                    {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
-                                    ))}
-                                </div>
-                            </div>
-                        </div>
-                    </>
-                );
             case 'Music':
                 return (
                     <>
-                        <div className="absolute w-full h-8 ">
-                        </div>
+                        <div className="absolute w-full h-8 "></div>
                         <div className="w-screen">
-                            <div className="relative  left-[-1240px] transform  mt-5 bg-black px-8 py-3">
+                            <div className="fixed inset-x-0 transform mt-5 bg-black px-8 py-3">
                                 <div className="flex items-center text-[15px] font-semibold text-white justify-center gap-8">
                                     {contentSubNav?.content?.map(item => (
-                                        <div key={item?.id}>{item?.title}</div>
+                                        <div className='hover:duration-200 hover:text-violet-300 ' key={item?.id}>{item?.title}</div>
                                     ))}
                                 </div>
                             </div>
@@ -229,11 +174,11 @@ const OnHoverComponent = ({ title, data }) => {
 
     return (
         <div className='relative group'>
-            <div className='hover:text-violet-500 cursor-pointer '>
+            <div className='hover:text-violet-500 cursor-pointer'>
                 {title}
             </div>
-            <div className={!leftSideDataHoverItem.includes(data?.type) ? "absolute z-10 w-96 mt-1  right-0 hidden group-hover:block" : "absolute z-10 w-96 mt-1 left-0 hidden group-hover:block"}>
-                <div className={!subNavData.some(item => item.title === data?.type) ? "w-full h-14 bg-transparent" : "w-screen relative mt-[-10px] bg-transparent"}></div>
+            <div className={!leftSideDataHoverItem.includes(data?.type) ? "absolute overflow-hidden z-10 w-96 mt-1  right-0 hidden group-hover:block" : "absolute z-10 w-96 mt-1 left-0 hidden group-hover:block"}>
+                <div className={!subNavData.some(item => item.title === data?.type) ? "w-full h-14 bg-transparent mt-[-10px]" : "w-screen relative mt-[-10px] bg-transparent"}></div>
                 {handleData()}
             </div>
         </div>

@@ -4,9 +4,13 @@ const CommonSection = ({ data }) => {
     const handleLoadTag = (tag) => {
         switch (tag) {
             case 'Bestseller':
-                return <div className='p-2 max-sm:p-1 max-sm:text-xs bg-yellow-200  text-black flex font-semibold'>{tag}</div>
+                return <div className='flex font-semibold'>
+                    <div className='p-2 max-sm:p-1 max-sm:text-xs text-sm bg-yellow-200 text-black inline-block'>{tag}</div>
+                </div>
             case 'Highest Rated':
-                return <div className='p-2 max-sm:p-1 max-sm:text-xs bg-orange-200  text-black flex font-semibold'>{tag}</div>
+                return <div className='flex font-semibold'>
+                    <div className='p-2 max-sm:p-1 max-sm:text-xs text-sm bg-orange-200 text-black inline-block'>{tag}</div>
+                </div>
         }
     }
     return (
@@ -14,7 +18,7 @@ const CommonSection = ({ data }) => {
             <h2 className='text-4xl max-sm:text-xl font-serifDisplay font-extrabold'>{data.title}</h2>
             <div className="grid grid-cols-5 max-lg:grid-cols-2 gap-3">
                 {data?.data?.map((data, index) =>
-                    <div key={index} className='flex flex-col'>
+                    <div key={index} className='flex flex-col hover:bg-gray-100 cursor-pointer p-3'>
                         <div className="w-full h-40 max-sm:h-20">
                             <div className="image" style={{ backgroundImage: `url('${data?.image}')` }}></div>
                         </div>

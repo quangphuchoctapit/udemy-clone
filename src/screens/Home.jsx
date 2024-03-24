@@ -71,11 +71,11 @@ const Home = () => {
                 {/* Training undefined or more people */}
                 <div className='mx-3 bg-black text-white p-4 flex justify-between items-center gap-3'>
                     <div className=''>
-                        <p className='text-lg font-bold  max-sm:text-sm'>Training undefined or more people?   <span className='text-base max-sm:text-xs max-sm:hidden block font-normal'>Get your team access to Udemy's top 25,000+ courses</span></p>
+                        <p className='text-lg font-bold  max-sm:text-sm'>Training undefined or more people?   <span className='text-base max-sm:text-xs max-sm:hidden block font-normal'>Get your team access to Skillsprint's top 25,000+ courses</span></p>
                     </div>
                     <div className="flex gap-3 items-center">
-                        <button className='p-3 max-md:p-2 max-sm:p-2 max-sm:text-sm max-md:leading-4 text-black bg-white font-semibold h-auto min-h-[5rem]'>Get Udemy Business</button>
-                        <button className='p-3 max-md:p-2 max-sm:p-2 max-sm:text-sm max-md:leading-4 text-white border-2 border-white bg-black font-semibold h-auto min-h-[5rem]'>Dismiss</button>
+                        <button className='p-3 max-md:p-2 max-sm:p-2 max-sm:text-sm max-md:leading-4 text-black bg-white font-semibold h-auto hover:bg-gray-300 max-lg:min-h-[5rem]'>Get Skillsprint Business</button>
+                        <button className='p-3 max-md:p-2 max-sm:p-2 max-sm:text-sm max-md:leading-4 text-white border-2 border-white bg-black font-semibold h-auto hover:bg-gray-700 max-lg:min-h-[5rem]'>Dismiss</button>
                     </div>
 
                 </div>
