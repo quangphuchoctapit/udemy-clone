@@ -10,7 +10,6 @@ import { useMatch } from 'react-router-dom';
 
 const Nav = () => {
     const isHomeRoute = useMatch("/");
-    console.log(isHomeRoute)
     const [isShowSubNav, setIsShowSubNav] = useState(false)
     useEffect(() => {
         if (isHomeRoute?.pathname === '/') {
