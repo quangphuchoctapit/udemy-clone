@@ -14,10 +14,10 @@ const SliderMain = ({ data, setData }) => {
             </div>
             <div className='w-full h-full bg-[#a5e2d0] flex px-20 justify-between items-center'>
                 <div className='p-8 max-w-96 flex flex-col gap-3 bg-white'>
-                    <h3 className='text-4xl font-bold'>{data.title}</h3>
-                    <p className='text-lg'>{data.description}</p>
+                    <h3 className='text-4xl max-sm:text-lg font-serifDisplay font-bold'>{data.title}</h3>
+                    <p className='text-lg max-sm:text-xs'>{data.description}</p>
                 </div>
-                <div className="flex-1 h-full flex items-center">
+                <div className="flex-1 max-md:hidden h-full flex items-center">
                     <div className="w-full h-72">
                         <div style={{ backgroundImage: `url('${data.image}')`, backgroundSize: '100%' }} className='w-full h-full object-cover bg-center bg-no-repeat'></div>
                     </div>

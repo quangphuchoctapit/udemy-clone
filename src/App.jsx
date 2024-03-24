@@ -8,6 +8,7 @@ import {
 import Home from './screens/Home';
 import Nav from './components/Nav/Nav';
 import Footer from './components/Footer/Footer';
+import Profile from './screens/Profile';
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Nav />
       <Routes >
         <Route path='/' element={<Home />} />
+        <Route path='/profile' element={<Profile />} />
         <Route path='*' element={<div>404 not found</div>} />
       </Routes>
       <Footer />
