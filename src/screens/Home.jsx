@@ -3,7 +3,7 @@ import { dataSliderMain } from '../utils/data/home/sliderData';
 import SliderMain from '../components/Home/SliderMain';
 import { Link } from 'react-router-dom';
 import CommonSection from '../components/Home/CommonSection';
-import { limitWords } from '../utils/data/home/functions/limitWords';
+import { limitWords } from '../utils/functions/limitWords';
 
 
 const Home = () => {
@@ -49,15 +49,15 @@ const Home = () => {
                         <h2 className='text-4xl max-sm:text-lg font-serifDisplay font-extrabold'>Let's start learning, <span>Tommy</span></h2>
                         <Link to='/my-learning' className='underline font-bold text-violet-500'>My learning</Link>
                     </div>
-                    <div className="flex flex-wrap gap-3 ">
-                        <div className='basis-1/3  max-md:flex-1 cursor-pointer border flex gap-3 hover:duration-200 hover:bg-opacity-70 hover:scale-[101%]'>
+                    <div className="flex flex-wrap gap-3 max-xl:grid grid-cols-2 max-md:grid-cols-1">
+                        <div className='p-3 max-md:flex-1 cursor-pointer border flex gap-3 hover:duration-200 hover:bg-opacity-70 hover:scale-[101%]'>
                             <div className="flex">
-                                <div className="w-56 h-40 max-lg:w-40 max-lg:h-28">
+                                <div className="w-56 h-40 max-sm:w-24 max-sm:h-12 max-lg:w-40 max-lg:h-28">
                                     <div className="image" style={{ backgroundImage: `url('././public/image/courses/react-native-stephen.jpg')`, backgroundSize: '150%' }}></div>
                                 </div>
                             </div>
                             <div className="flex-1 flex flex-col gap-3">
-                                <h4 className='font-semibold text-gray-600 max-lg:text-xs max-sm:mt-3'>The complete React Native + Hook</h4>
+                                <h4 className='font-semibold text-gray-600 max-lg:text-xs'>The complete React Native + Hook</h4>
                                 <p className='flex-1 font-bold text-lg max-lg:text-sm'>133. It Works!</p>
                                 <div className='flex gap-2  max-sm:mb-3'>
                                     <p className='font-semibold text-gray-600 max-lg:text-xs'>Lecture</p>
@@ -83,7 +83,7 @@ const Home = () => {
                 {/* what to learn next */}
                 <div className="home-section-container">
                     <h2 className='text-4xl max-sm:text-xl font-serifDisplay font-extrabold'>What to learn next</h2>
-                    <h3 className='max-sm:text-lg font-bold'>Our top pick for you</h3>
+                    <h3 className='max-sm:text-lg text-2xl font-bold'>Our top pick for you</h3>
                     <div className='border p-3 flex gap-12 max-sm:gap-4 items-center cursor-pointer hover:scale-[101%] hover:duration-300 hover:bg-gray-100'>
                         <div className="w-[36rem] h-72 max-sm:w-32 max-sm:h-24">
                             <div className="image" style={{ backgroundImage: `url('././public/image/courses/react-native-stephen.jpg')`, backgroundSize: '150%' }}></div>

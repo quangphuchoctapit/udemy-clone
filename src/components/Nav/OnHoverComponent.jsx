@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { subNavData } from '../../utils/data/home/subNavData';
 import { MdArrowForwardIos } from "react-icons/md";
+import { limitWords } from '../../utils/functions/limitWords.js'
 
 const leftSideDataHoverItem = [
     ...subNavData.map(item => item.title), 'Categories'
@@ -19,6 +20,7 @@ const OnHoverComponent = ({ title, data }) => {
             setContentSubNav(handleGetDataSubNav(data?.type));
         }
     }, [data]);
+
     const handleData = () => {
         switch (data?.type) {
             case 'Categories':
@@ -96,9 +98,12 @@ const OnHoverComponent = ({ title, data }) => {
                             <div className="w-24 h-24">
                                 <div className="object-cover bg-no-repeat bg-center w-full h-full" style={{ backgroundImage: `url('${data?.data[0]?.image}')`, backgroundSize: '150%' }}></div>
                             </div>
-                            <div className="flex flex-col">
-                                <p className='text-lg font-semibold'></p>
-                                <div className="">progress bar</div>
+                            <div className="flex flex-col w-full gap-3">
+                                <p className='text-lg font-semibold'>{limitWords(`The Complete React Native + Hooks Course`, 3)}</p>
+                                <div className="flex items-center w-full">
+                                    <div className="flex-1 bg-violet-600 h-3"></div>
+                                    <div style={{ width: `${(1 - (data?.data[0]?.progress || 0)) * 100}%` }} className="h-3 bg-gray-500"></div>
+                                </div>
                             </div>
                         </div>
 
@@ -172,10 +177,33 @@ const OnHoverComponent = ({ title, data }) => {
         }
     };
 
+    const handleTitle = () => {
+        switch (data?.type) {
+            case 'Notifications':
+                return <Link to='/notifications'>
+                    {title}
+                </Link>
+            case 'Cart':
+                return <Link to='/cart'>
+                    {title}
+                </Link>
+            case 'Wishlist':
+                return <Link to='/my-learning/wishlist'>
+                    {title}
+                </Link>
+            case 'My learning':
+                return <Link to='/my-learning/all-courses'>
+                    {title}
+                </Link>
+            default:
+                return title
+        }
+    }
+
     return (
         <div className='relative group'>
             <div className='hover:text-violet-500 cursor-pointer'>
-                {title}
+                {handleTitle()}
             </div>
             <div className={!leftSideDataHoverItem.includes(data?.type) ? "absolute overflow-hidden z-10 w-96 mt-1  right-0 hidden group-hover:block" : "absolute z-10 w-96 mt-1 left-0 hidden group-hover:block"}>
                 <div className={!subNavData.some(item => item.title === data?.type) ? "w-full h-14 bg-transparent mt-[-10px]" : "w-screen relative mt-[-10px] bg-transparent"}></div>

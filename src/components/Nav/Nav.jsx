@@ -19,17 +19,23 @@ const Nav = () => {
             setIsShowSubNav(false)
         }
     }, [isHomeRoute])
+
+    const [imageLogo, setImageLogo] = useState('')
+    useEffect(() => {
+        setImageLogo('././public/image/logo/logo.png')
+    }, [isHomeRoute])
     return (
         <>
             {/* main nav */}
-            <div className={isHomeRoute ? 'w-full p-3 border-b-2 border-gray-300 relative inset-0 flex gap-6 items-center text-xl' : 'w-full p-3 border-b-2 shadow-lg border-gray-300 relative inset-0 flex gap-6 items-center text-xl'}>
+            <div className={isHomeRoute ? 'w-full p-3 border-b-2 border-gray-300 relative inset-0 flex max-md:justify-between gap-6 items-center text-xl' : 'w-full p-3 border-b-2 shadow-lg border-gray-300 relative inset-0 flex gap-6 max-md:justify-between items-center text-xl'}>
+                <div className="max-md:block hidden">burger</div>
                 {/* logo */}
-                <Link to='/' className='w-48 h-28 cursor-pointer '>
-                    <div style={{ backgroundImage: `url('././public/image/logo/logo.png')`, backgroundSize: '100%' }} className='image'></div>
+                <Link to='/' className='w-48 h-32 cursor-pointer '>
+                    <div style={{ backgroundImage: `url('${imageLogo}')`, backgroundSize: '100%' }} className='image'></div>
                 </Link>
 
                 {/* Categories */}
-                <div className='hidden lg:block hover:duration-200 cursor-pointer'>
+                <div className='hidden xl:block hover:duration-200 cursor-pointer'>
                     <OnHoverComponent title='Categories' data={{
                         type: 'Categories', data: navCategoriesData
                     }} />
@@ -62,7 +68,7 @@ const Nav = () => {
                     </div>
 
                     {/* My learning */}
-                    <div className='hidden lg:block   cursor-pointer'>
+                    <div className='hidden xl:block   cursor-pointer'>
                         <OnHoverComponent title='My learning' data={{
                             type: 'My learning', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -76,9 +82,9 @@ const Nav = () => {
                     </div>
                 </div>
 
-                <div className='flex items-center flex-1 gap-8 justify-end'>
+                <div className='flex items-center max-md:hidden flex-1 gap-8 justify-end'>
                     {/* Wishlist */}
-                    <div className='hidden sm:block   cursor-pointer'>
+                    <div className='hidden xl:block   cursor-pointer'>
                         <OnHoverComponent title={<FaRegHeart className='' size={30} />} data={{
                             type: 'Wishlist', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -92,7 +98,7 @@ const Nav = () => {
                     </div>
 
                     {/* Cart */}
-                    <div className='hidden sm:block   cursor-pointer'>
+                    <div className='hidden md:block   cursor-pointer'>
                         <OnHoverComponent title={<FiShoppingCart className='' size={30} />} data={{
                             type: 'Cart', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -106,7 +112,7 @@ const Nav = () => {
                     </div>
 
                     {/* Notification */}
-                    <div className='hidden sm:block   cursor-pointer'>
+                    <div className='hidden xl:block   cursor-pointer'>
                         <OnHoverComponent title={<GoBell className='' size={30} />} data={{
                             type: 'Notifications', data: [{
                                 id: 1, image: `././public/image/courses/react-native-stephen.jpg`,
@@ -120,10 +126,14 @@ const Nav = () => {
                     </div>
 
                     {/* profile */}
-                    <Link to='/profile' className='w-12 h-12'>
+                    <Link to='/profile' className='w-12 hidden md:block h-12'>
                         <div className='cursor-pointer w-full h-full object-cover bg-center bg-no-repeat bg-black rounded-full'></div>
                     </Link>
                 </div>
+                {/* profile --- small device */}
+                <Link to='/profile' className='max-md:block hidden min-w-10 h-10'>
+                    <div className='image bg-black rounded-full'></div>
+                </Link>
             </div>
             {/* subnav */}
             {isShowSubNav &&

@@ -1,6 +1,11 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
+    const [imageLogo, setImageLogo] = useState('')
+    useEffect(() => {
+        setImageLogo('././public/image/logo/logo.png')
+    }, [window])
     return (
         <div className='w-full  bg-black text-white relative inset-0 bottom-0 flex flex-col gap-6 text-xl'>
             <div className="px-6 py-3 max-sm:flex-col max-sm:gap-3 border-b-2 border-gray-600 flex justify-between items-center">
@@ -57,7 +62,7 @@ const Footer = () => {
             </div>
             <div className='flex justify-between items-center'>
                 <div className='w-48 h-32 ml-20 max-md:ml-3 max-md:w-28 max-md:h-16 hover:duration-200 hover:text-violet-500 cursor-pointer '>
-                    <div style={{ backgroundImage: `url('././public/image/logo/logo.png')`, backgroundSize: '100%' }} className='image'></div>
+                    <Link to='/' style={{ backgroundImage: `url('././public/image/logo/logo.png')`, backgroundSize: '100%' }} className='image'></Link>
                 </div>
                 <div className="mr-20 max-md:mr-3 max-md:text-xs">	&copy;2024, Skillsprint, Tommy Le</div>
             </div>
