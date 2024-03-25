@@ -2,7 +2,7 @@ export const navCategoriesData = [
     {
         title: 'Development',
         id: 1,
-        link: '/development',
+        link: '/courses/development',
         commonTopics: [
             { link: '/courses/web-development', title: 'Web Development', id: 1 },
             { link: '/courses/mobile-development', title: 'Mobile Development', id: 2 },
@@ -15,7 +15,7 @@ export const navCategoriesData = [
     {
         title: 'Business',
         id: 2,
-        link: '/business',
+        link: '/courses/business',
         commonTopics: [
             { link: '/courses/entrepreneurship', title: 'Entrepreneurship', id: 1 },
             { link: '/courses/communication', title: 'Communication', id: 2 },
@@ -27,7 +27,7 @@ export const navCategoriesData = [
     {
         title: 'Finance & Accounting',
         id: 3,
-        link: '/finance-accounting',
+        link: '/courses/finance-accounting',
         commonTopics: [
             { link: '/courses/accounting-bookeeping', title: 'Accounting & Bookeeping', id: 1 },
             { link: '/courses/cryptocurrency-blockchain', title: 'Cryptocurrency & Blockchain', id: 2 },
@@ -39,7 +39,7 @@ export const navCategoriesData = [
     {
         title: 'IT & Software',
         id: 4,
-        link: '/it-software',
+        link: '/courses/it-software',
         commonTopics: [
             { link: '/courses/it-certifications', title: 'IT Certifications', id: 1 },
             { link: '/courses/network-security', title: 'Network & Security', id: 2 },
@@ -51,7 +51,7 @@ export const navCategoriesData = [
     {
         title: 'Office Productivity',
         id: 5,
-        link: '/office-productivity',
+        link: '/courses/office-productivity',
         commonTopics: [
             { link: '/courses/microsoft', title: 'Microsoft', id: 1 },
             { link: '/courses/apple', title: 'Apple', id: 2 },
@@ -63,7 +63,7 @@ export const navCategoriesData = [
     {
         title: 'Personal Development',
         id: 6,
-        link: '/personal-development',
+        link: '/courses/personal-development',
         commonTopics: [
             { link: '/courses/personal-transformation', title: 'Personal Transformation', id: 1 },
             { link: '/courses/personal-productivity', title: 'Personal Productivity', id: 2 },
@@ -75,7 +75,7 @@ export const navCategoriesData = [
     {
         title: 'Design',
         id: 7,
-        link: '/design',
+        link: '/courses/design',
         commonTopics: [
             { link: '/courses/web-design', title: 'Web Design', id: 1 },
             { link: '/courses/graphic-design-illustration', title: 'Graphic Design & Illustration', id: 2 },
@@ -87,7 +87,7 @@ export const navCategoriesData = [
     {
         title: 'Music',
         id: 8,
-        link: '/music',
+        link: '/courses/music',
         commonTopics: [
             { link: '/courses/instruments', title: 'Instruments', id: 1 },
             { link: '/courses/music-production', title: 'Music Production', id: 2 },

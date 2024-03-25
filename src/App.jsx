@@ -23,6 +23,9 @@ import Wishlist from './components/MyLearning/Wishlist';
 import AllCourses from './components/MyLearning/AllCourses';
 import MyList from './components/MyLearning/MyList';
 import Archived from './components/MyLearning/Archived';
+import CoursesRoute from './Routes/CoursesRoute';
+import MyLearningRoutes from './Routes/MyLearningRoutes';
+import ProfileRoute from './Routes/ProfileRoute';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -31,19 +34,14 @@ const router = createBrowserRouter(
         <Route path='/' element={<Home />} />
 
         {/* profile */}
-        <Route path='/profile' element={<ProfileLayout />}>
-          <Route exact path='/profile' element={<Profile />} />
-          <Route path='/profile/edit-account' element={<ProfileEditAccount />} />
-          <Route path='/profile/photo' element={<ProfilePhoto />} />
-        </Route>
+        {ProfileRoute()}
 
         {/* my learning */}
-        <Route path='/my-learning' element={<MyLearning />}>
-          <Route path='/my-learning/wishlist' element={<Wishlist />} />
-          <Route path='/my-learning/all-courses' element={<AllCourses />} />
-          <Route path='/my-learning/my-list' element={<MyList />} />
-          <Route path='/my-learning/archived' element={<Archived />} />
-        </Route>
+        {MyLearningRoutes()}
+
+
+        {/* courses */}
+        {CoursesRoute()}
 
         <Route path='/notifications' element={<Notifications />} />
         <Route path='/cart' element={<Cart />} />

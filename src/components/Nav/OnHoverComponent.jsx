@@ -41,7 +41,7 @@ const OnHoverComponent = ({ title, data }) => {
                         <div className='bg-white group-hover:relative w-full border-2 shadow-2xl p-3 font-bold text-2xl flex flex-col gap-3 items-center'>
                             <div className="min-h-screen w-full py-4 px-3 flex flex-col gap-6">
                                 {data?.data?.map(item => (
-                                    <Link to={item.link}
+                                    <Link to={`${item.link}`}
                                         onMouseEnter={() => handleMouseEnter(item)}
                                         // onMouseLeave={handleMouseLeave}
                                         className={`w-full flex hover:duration-200 hover:text-violet-500 hover:relative justify-between items-center `}
@@ -58,7 +58,7 @@ const OnHoverComponent = ({ title, data }) => {
                             <div className='bg-white group-hover:relative w-full border-2 shadow-2xl p-3 font-bold text-2xl flex flex-col gap-3 items-center'>
                                 <div className="min-h-screen w-full py-4 px-3 flex flex-col gap-6">
                                     {currentHoveredCategory?.commonTopics?.map(topic => (
-                                        <Link to={topic.link}
+                                        <a href={`${topic.link}`}
                                             // onMouseEnter={() => handleMouseEnter(topic)}
                                             // onMouseLeave={handleMouseLeave}
                                             className='w-full flex hover:duration-200 hover:text-violet-500 hover:relative justify-between items-center'
@@ -66,7 +66,7 @@ const OnHoverComponent = ({ title, data }) => {
                                         >
                                             {topic.title}
                                             <MdArrowForwardIos size={15} />
-                                        </Link>
+                                        </a>
                                     ))}
                                 </div>
                             </div>

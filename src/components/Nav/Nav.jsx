@@ -6,23 +6,34 @@ import SearchBarNav from './SearchBarNav.jsx';
 import OnHoverComponent from './OnHoverComponent.jsx';
 import SubNav from './SubNav.jsx';
 import { Link } from 'react-router-dom';
-import { useMatch } from 'react-router-dom';
+import { useMatch, useLocation } from 'react-router-dom';
 import { navCategoriesData } from '../../utils/data/home/navCategoriesData.js'
+import SubNavCourses from './SubNavCourses.jsx';
 
 const Nav = () => {
-    const isHomeRoute = useMatch("/");
+    const location = useLocation()
+    const [isHomeRoute, setIsHomeRoute] = useState(false)
+    const [isShowSubNavCourses, setIsShowSubNavCourses] = useState(false)
     const [isShowSubNav, setIsShowSubNav] = useState(false)
     useEffect(() => {
-        if (isHomeRoute?.pathname === '/') {
+        if (location.pathname === '/') {
+            setIsHomeRoute(true)
             setIsShowSubNav(true)
-        } else {
+            setIsShowSubNavCourses(false)
+        } else if (location.pathname.includes('/courses')) {
+            setIsHomeRoute(false)
             setIsShowSubNav(false)
+            setIsShowSubNavCourses(true)
+        } else {
+            setIsHomeRoute(false)
+            setIsShowSubNav(false)
+            setIsShowSubNavCourses(false)
         }
-    }, [isHomeRoute])
+    }, [location])
 
     const [imageLogo, setImageLogo] = useState('')
     useEffect(() => {
-        setImageLogo('././public/image/logo/logo.png')
+        setImageLogo('/image/logo/logo.png')
     }, [isHomeRoute])
     return (
         <>
@@ -47,7 +58,7 @@ const Nav = () => {
                 </div>
 
                 <div className="flex items-center gap-8 ">
-                    {/* Categories */}
+                    {/* Skillsprint Business */}
                     <div className='hidden lg:block   cursor-pointer'>
                         <OnHoverComponent title='Skillsprint Business' data={{
                             type: 'Skillsprint Business', data: {
@@ -138,6 +149,9 @@ const Nav = () => {
             {/* subnav */}
             {isShowSubNav &&
                 <SubNav />
+            }
+            {isShowSubNavCourses &&
+                <SubNavCourses />
             }
         </>
     )
