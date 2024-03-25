@@ -1,0 +1,22 @@
+export const rectangleData = [
+    { id: 1, title: 'React Native', link: '/courses/react-native' },
+    { id: 2, title: 'JavaScript Fundamentals', link: '/courses/javascript-fundamentals' },
+    { id: 3, title: 'Python for Data Science', link: '/courses/python-data-science' },
+    { id: 4, title: 'Machine Learning Basics', link: '/courses/machine-learning-basics' },
+    { id: 5, title: 'UI/UX Design Principles', link: '/courses/ui-ux-design' },
+    { id: 6, title: 'Digital Marketing Strategies', link: '/courses/digital-marketing' },
+    { id: 7, title: 'Introduction to Cybersecurity', link: '/courses/cybersecurity-intro' },
+    { id: 8, title: 'Photography Essentials', link: '/courses/photography-essentials' },
+    { id: 9, title: 'Creative Writing Workshop', link: '/courses/creative-writing' },
+    { id: 10, title: 'Financial Planning & Budgeting', link: '/courses/financial-planning' },
+    { id: 11, title: 'iOS App Development', link: '/courses/ios-app-development' },
+    { id: 12, title: 'Android App Development', link: '/courses/android-app-development' },
+    { id: 13, title: 'Data Visualization Techniques', link: '/courses/data-visualization' },
+    { id: 14, title: 'Project Management Fundamentals', link: '/courses/project-management' },
+    { id: 15, title: 'Artificial Intelligence Explained', link: '/courses/ai-explained' },
+    { id: 16, title: 'Economics for Everyone', link: '/courses/economics' },
+    { id: 17, title: 'Blockchain Essentials', link: '/courses/blockchain-essentials' },
+    { id: 18, title: 'Music Production Masterclass', link: '/courses/music-production' },
+    { id: 19, title: 'Spanish Language Basics', link: '/courses/spanish-language' },
+    { id: 20, title: 'Yoga and Meditation Practices', link: '/courses/yoga-meditation' }
+];

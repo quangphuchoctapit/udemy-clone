@@ -4,6 +4,8 @@ import SliderMain from '../components/Home/SliderMain';
 import { Link } from 'react-router-dom';
 import CommonSection from '../components/Home/CommonSection';
 import { limitWords } from '../utils/functions/limitWords';
+import RectangleTopics from '../components/RectangleTopics';
+import { rectangleData } from '../utils/data/rectangleData';
 
 
 const Home = () => {
@@ -33,9 +35,6 @@ const Home = () => {
         }
     }
     /////////////////////////////////
-
-
-
 
     return (
         <>
@@ -213,6 +212,11 @@ const Home = () => {
                     ]
                 }} />
 
+                {/* topics recommended for you */}
+                <div className='mx-3 flex flex-col gap-3'>
+                    <h3 className='text-4xl font-serifDisplay font-bold'>Topics recommended for you</h3>
+                    <RectangleTopics data={rectangleData} />
+                </div>
 
                 {/* Popular for Web Developers */}
                 <CommonSection data={{
