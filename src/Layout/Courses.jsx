@@ -74,7 +74,7 @@ const Courses = () => {
     return (
         <>
             <div className='w-full min-h-96 flex flex-col px-3 gap-8'>
-                <h3 className='font-serifDisplay font-bold text-3xl'>{title} Courses</h3>
+                <h3 className='font-serifDisplay font-bold text-3xl mt-8'>{title} Courses</h3>
                 <h4 className='text-2xl font-bold'>Courses to get you started</h4>
                 <div className='text-xl font-semibold flex items-center'>
                     <div className="px-3 relative group cursor-pointer hover:duration-200 hover:text-gray-600" onClick={() => handleSetCurrentSelectTypeCourses('Most popular')}>
